@@ -1,4 +1,5 @@
 
+
 // Parent Component
 class ColorsDashboard extends React.Component {
   render() {
@@ -24,10 +25,16 @@ class SelectableColors extends React.Component {
 }
 
 class ColorsController extends React.Component {
+  handleNewColors () {
+    console.log('new colors btn clicked!!');
+  }
   render() {
     return(
       <div className="button-wrapper">
-        <button className="new-colors">
+        <button
+          className="new-colors"
+          onClick={this.handleNewColors}
+        >
           New Colors
         </button>
       </div>
