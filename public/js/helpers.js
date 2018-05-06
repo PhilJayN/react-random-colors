@@ -13,24 +13,16 @@ window.helpers = (function () {
       var r = (Math.round(Math.random()* 127) + 127);
       var g = (Math.round(Math.random()* 127) + 127);
       var b = (Math.round(Math.random()* 127) + 127);
-      console.log ('r', r, 'g', g, 'b', b);
-      var background = 'rgb('
+      var color = 'rgb('
                         + r.toString()
                         + ', '
                         + g.toString()
                         + ', '
-                        + b.toString();
-      var icon = 'rgb('
-                        + (r - 40).toString()
-                        + ', '
-                        + (g - 40).toString()
-                        + ', '
-                        + (b - 40).toString()
+                        + b.toString()
                         + ')';
-      return {
-        background: background,
-        icon: icon,
-      }
+
+      console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+      return color;
   }
 
   function sayHi() {

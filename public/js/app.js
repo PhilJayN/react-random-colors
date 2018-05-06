@@ -17,7 +17,9 @@ class SelectableColors extends React.Component {
   render() {
     return(
       <div className="colors-wrapper">
-        sdajlfk;
+        <div className="color">
+          {helpers.newColor()};
+        </div>
       </div>
     );
   }
@@ -27,6 +29,7 @@ class SelectableColors extends React.Component {
 class ColorsController extends React.Component {
   handleNewColors () {
     console.log('new colors btn clicked!!');
+    helpers.newColor();
   }
   render() {
     return(
