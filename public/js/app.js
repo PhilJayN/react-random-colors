@@ -36,14 +36,15 @@ class ColorsDashboard extends React.Component {
 class Color extends React.Component {
 
   render() {
-    // const style = {
-    //   // backgroundColor: 'goldenrod',
-    //   backgroundColor: 'pink',
-    // }
+    const style = {
+      // backgroundColor: 'goldenrod',
+      backgroundColor: 'pink',
+    }
     return(
       <div className="colors-wrapper">
         <div
           className="color"
+          style={{backgroundColor: this.props.code}}
         >
           {this.props.code}
         </div>
