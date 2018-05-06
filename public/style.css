@@ -2,6 +2,7 @@
 
 #content {
   margin-bottom: 4em;
+  border: 1px solid red;
 }
 
 .ui.dividing.header {
@@ -16,4 +17,6 @@ i.icon {
 .color {
   width: 100px;
   height: 100px;
+  border: 1px solid red;
+  /* background-color: pink; */
 }
