@@ -29,8 +29,32 @@ window.helpers = (function () {
     console.log('hiiiii from helpers');
   }
 
+
+  // function getRandomArbitrary(min, max) {
+  //     return Math.random() * (max - min) + min;
+  // }
+
+  function hueRed() {
+    var r = Math.round( Math.random() * (255 - 216) + 216 );
+    var g = Math.round( Math.random() * (33 - 1) + 1 );
+    var b = Math.round( Math.random() * (33 - 1) + 1 );
+
+    var color = 'rgb('
+                      + r.toString()
+                      + ', '
+                      + g.toString()
+                      + ', '
+                      + b.toString()
+                      + ')';
+
+    console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+    return color;
+
+  }
+
   return {
     newColor,
     sayHi,
+    hueRed,
   };
 }());
