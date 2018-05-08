@@ -1,5 +1,4 @@
 
-
 // Parent Component
 class ColorsDashboard extends React.Component {
   constructor(props) {
@@ -16,14 +15,13 @@ class ColorsDashboard extends React.Component {
     this.setState({ colors: Seed.colors })
   }
 
-
   handleColorChange(colorId) {
     console.log ('you clicked on one color!', 'color id:', colorId);
     const nextColors = this.state.colors.map((color) => {
       if (color.id === colorId) {
         console.log ('match color id!!');
         return Object.assign({}, color, {
-          code: 'rgb(0, 0, 0)',
+          code: helpers.newColor(),
         });
       } else {
         return color;
@@ -32,11 +30,9 @@ class ColorsDashboard extends React.Component {
     this.setState({
       colors: nextColors,
     })
-    //code for creating new objects, then using .setState
   }
 
   render() {
-
     const colorComponents = this.state.colors.map((color) =>(
       <Color
         key={'color-' + color.id}
@@ -56,7 +52,6 @@ class ColorsDashboard extends React.Component {
 }
 //child Component
 class Color extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -88,14 +83,6 @@ class Color extends React.Component {
   }
 
 }
-
-
-
-
-
-
-
-
 
 
 //button component
