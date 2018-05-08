@@ -59,10 +59,11 @@ class ColorsDashboard extends React.Component {
 
     return(
       <div className="content-wrapper">
+        {colorComponents}
         <ColorsController
           onDelta={this.rainbowUnicorn}
         />
-        {colorComponents}
+        <Instructions />
       </div>
     );
   }
@@ -101,6 +102,18 @@ class Color extends React.Component {
     );
   }
 
+}
+
+//instructions
+class Instructions extends React.Component {
+  render() {
+    return(
+      <div className="instructions">
+        <p>Click on any color to generate one new color.</p>
+        <p>Click on New Colors button for many colors.</p>
+      </div>
+    );
+  }
 }
 
 
