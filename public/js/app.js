@@ -1,5 +1,4 @@
 
-helpers.newColor()
 // Parent Component
 class ColorsDashboard extends React.Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class ColorsDashboard extends React.Component {
       if (color.id === colorId) {
         console.log ('match color id!!');
         return Object.assign({}, color, {
-          code: helpers.newColor(),
+          code: helpers.pastels(),
         });
       } else {
         console.log ('asdjfkl;')
@@ -141,13 +140,19 @@ class ColorsController extends React.Component {
           className="new-colors-btn"
           onClick={this.handleNewColors}
         >
-          New Pastels
+          Sunday Pastels
         </button>
         <button
           className="new-colors-btn"
           onClick={this.handleNewColors}
         >
           Summerset Sunshine
+        </button>
+        <button
+          className="new-colors-btn"
+          onClick={this.handleNewColors}
+        >
+          Midnight Dream
         </button>
       </div>
     );

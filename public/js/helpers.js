@@ -9,7 +9,7 @@ window.helpers = (function () {
     return timer;
   }
 
-  function newColor(){
+  function pastels(){
       var r = (Math.round(Math.random()* 127) + 127);
       var g = (Math.round(Math.random()* 127) + 127);
       var b = (Math.round(Math.random()* 127) + 127);
@@ -90,11 +90,15 @@ window.helpers = (function () {
 
   }
 
-
   function generateColors(hue) {
     if (hue === 'Summerset Sunshine') {
       return hueYellow();
-
+    }
+    else if (hue === 'Sunday Pastels') {
+      return pastels();
+    }
+    else if (hue === 'Midnight Dream') {
+      return hueMidnight();
     } else {
       var r = Math.round( Math.random() * (48 - 21) + 21 );
       var g = Math.round( Math.random() * (40 - 4) + 4 );
@@ -118,7 +122,7 @@ window.helpers = (function () {
 
 
   return {
-    newColor,
+    pastels,
     sayHi,
     hueRed,
     hueYellow,
