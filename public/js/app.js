@@ -9,6 +9,7 @@ class ColorsDashboard extends React.Component {
     };
 
     this.handleColorChange = this.handleColorChange.bind(this);
+    this.rainbowUnicorn = this.rainbowUnicorn.bind(this);
   }
 
   componentDidMount() {
@@ -16,7 +17,7 @@ class ColorsDashboard extends React.Component {
   }
 
   handleColorChange(colorId) {
-    console.log ('you clicked on one color!', 'color id:', colorId);
+    // console.log ('you clicked on one color!', 'color id:', colorId);
     const nextColors = this.state.colors.map((color) => {
       if (color.id === colorId) {
         console.log ('match color id!!');
@@ -24,12 +25,40 @@ class ColorsDashboard extends React.Component {
           code: helpers.newColor(),
         });
       } else {
+        console.log ('asdjfkl;')
         return color;
       }
     });
     this.setState({
       colors: nextColors,
-    })
+    });
+    console.log ('created colors:', this.state.colors);
+  }
+
+  rainbowUnicorn() {
+    const colors = this.state.colors.map((color) => {
+      return Object.assign({}, color, {
+        code: helpers.newColor(),
+      });
+    });
+
+    this.setState({
+      colors: colors,
+    });
+
+
+
+    // const nextColors = this.state.colors.map((color) => {
+    //     return Object.assign({}, color, {
+    //       code: helpers.newColor(),
+    //     });
+    // });
+    // this.setState({
+    //   colors: nextColors,
+    // });
+    // console.log ('created colors:', this.state.colors);
+
+
   }
 
   render() {
@@ -44,6 +73,9 @@ class ColorsDashboard extends React.Component {
 
     return(
       <div className="content-wrapper">
+        <ColorsController
+          onDelta={this.rainbowUnicorn}
+        />
         {colorComponents}
       </div>
     );
@@ -87,10 +119,18 @@ class Color extends React.Component {
 
 //button component
 class ColorsController extends React.Component {
-  handleNewColors () {
-    console.log('new colors btn clicked!!');
-    helpers.newColor();
+
+  constructor(props) {
+    super(props);
+
+    this.handleNewColors = this.handleNewColors.bind(this)
   }
+
+  handleNewColors () {
+    console.log('new colors BUTTON clicked!!');
+    this.props.onDelta(this.props.id);
+  }
+
   render() {
     return(
       <div className="button-wrapper">
