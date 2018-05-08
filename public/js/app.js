@@ -39,7 +39,7 @@ class ColorsDashboard extends React.Component {
   rainbowUnicorn() {
     const colors = this.state.colors.map((color) => {
       return Object.assign({}, color, {
-        code: helpers.hueRed(),
+        code: helpers.hueMidnight(),
       });
     });
     this.setState({
@@ -138,7 +138,7 @@ class ColorsController extends React.Component {
           className="new-colors-btn"
           onClick={this.handleNewColors}
         >
-          New Colors
+          New Pastels
         </button>
       </div>
     );

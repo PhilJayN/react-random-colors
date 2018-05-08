@@ -30,7 +30,7 @@ window.helpers = (function () {
   }
 
 
-  // function getRandomArbitrary(min, max) {
+  // function getRandomArbitrary(min, max``) {
   //     return Math.random() * (max - min) + min;
   // }
 
@@ -49,12 +49,52 @@ window.helpers = (function () {
 
     console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
     return color;
+  }
+
+  function hueYellow() {
+    var r = Math.round( Math.random() * (248 - 242) + 242 );
+    var g = Math.round( Math.random() * (218 - 209) + 209 );
+    var b = Math.round( Math.random() * (60 - 2) + 2 );
+
+    var color = 'rgb('
+                      + r.toString()
+                      + ', '
+                      + g.toString()
+                      + ', '
+                      + b.toString()
+                      + ')';
+
+    console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+    return color;
 
   }
+
+  //baseline: rgb(48, 39, 86)
+  // change name, mightnight isn't a hue
+  function hueMidnight() {
+    var r = Math.round( Math.random() * (48 - 21) + 21 );
+    var g = Math.round( Math.random() * (40 - 4) + 4 );
+    var b = Math.round( Math.random() * (86 - 71) + 71 );
+
+    var color = 'rgb('
+                      + r.toString()
+                      + ', '
+                      + g.toString()
+                      + ', '
+                      + b.toString()
+                      + ')';
+
+    console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+    return color;
+
+  }
+
 
   return {
     newColor,
     sayHi,
     hueRed,
+    hueYellow,
+    hueMidnight,
   };
 }());
