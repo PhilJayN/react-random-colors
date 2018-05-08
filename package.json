@@ -7,7 +7,7 @@
     "e2e": "nightwatch",
     "test": "./node_modules/.bin/concurrently -k 'npm run server' 'npm run e2e'",
     "start": "npm run server",
-    "server": "live-server public --host=localhost --port=5000 --middleware=./disable-browser-cache.js"
+    "server": "live-server public --host=localhost --port=7000 --middleware=./disable-browser-cache.js"
   },
   "private": true,
   "devDependencies": {

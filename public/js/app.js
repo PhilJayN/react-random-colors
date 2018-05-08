@@ -9,24 +9,46 @@ class ColorsDashboard extends React.Component {
       colors: [],
     };
 
+    this.handleColorChange = this.handleColorChange.bind(this);
   }
 
   componentDidMount() {
     this.setState({ colors: Seed.colors })
   }
 
+
+  handleColorChange(colorId) {
+    console.log ('you clicked on one color!', 'color id:', colorId);
+    const nextColors = this.state.colors.map((color) => {
+      if (color.id === colorId) {
+        console.log ('match color id!!');
+        return Object.assign({}, color, {
+          code: 'rgb(0, 0, 0)',
+        });
+      } else {
+        return color;
+      }
+    });
+    this.setState({
+      colors: nextColors,
+    })
+    //code for creating new objects, then using .setState
+  }
+
   render() {
 
-    const colors = this.state.colors.map((color) =>(
+    const colorComponents = this.state.colors.map((color) =>(
       <Color
         key={'color-' + color.id}
+        id={color.id}
         code={color.code}
+        onDelta={this.handleColorChange}
       />
     ));
 
     return(
       <div className="content-wrapper">
-        {colors}
+        {colorComponents}
       </div>
     );
   }
@@ -35,6 +57,17 @@ class ColorsDashboard extends React.Component {
 //child Component
 class Color extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange() {
+    console.log ('clicked!')
+    this.props.onDelta(this.props.id)
+  }
+
   render() {
     const style = {
       // backgroundColor: 'goldenrod',
@@ -42,9 +75,11 @@ class Color extends React.Component {
     }
     return(
       <div className="colors-wrapper">
+        {this.props.id}
         <div
           className="color"
           style={{backgroundColor: this.props.code}}
+          onClick={this.handleChange}
         >
           {this.props.code}
         </div>
@@ -53,6 +88,15 @@ class Color extends React.Component {
   }
 
 }
+
+
+
+
+
+
+
+
+
 
 //button component
 class ColorsController extends React.Component {
