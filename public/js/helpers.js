@@ -29,11 +29,6 @@ window.helpers = (function () {
     console.log('hiiiii from helpers');
   }
 
-
-  // function getRandomArbitrary(min, max``) {
-  //     return Math.random() * (max - min) + min;
-  // }
-
   function hueRed() {
     var r = Math.round( Math.random() * (255 - 216) + 216 );
     var g = Math.round( Math.random() * (33 - 1) + 1 );
@@ -51,48 +46,50 @@ window.helpers = (function () {
     return color;
   }
 
-  function hueYellow() {
-    var r = Math.round( Math.random() * (248 - 242) + 242 );
-    var g = Math.round( Math.random() * (218 - 209) + 209 );
-    var b = Math.round( Math.random() * (60 - 2) + 2 );
+  // function hueYellow() {
+  //   var r = Math.round( Math.random() * (248 - 242) + 242 );
+  //   var g = Math.round( Math.random() * (218 - 209) + 209 );
+  //   var b = Math.round( Math.random() * (60 - 2) + 2 );
+  //
+  //   var color = 'rgb('
+  //                     + r.toString()
+  //                     + ', '
+  //                     + g.toString()
+  //                     + ', '
+  //                     + b.toString()
+  //                     + ')';
+  //
+  //   console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+  //   console.log ('hueYellow just ran!');
+  //   return color;
+  //
+  // }
 
-    var color = 'rgb('
-                      + r.toString()
-                      + ', '
-                      + g.toString()
-                      + ', '
-                      + b.toString()
-                      + ')';
-
-    console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
-    console.log ('hueYellow just ran!');
-    return color;
-
-  }
-
-  //baseline: rgb(48, 39, 86)
-  // change name, mightnight isn't a hue
-  function hueMidnight() {
-    var r = Math.round( Math.random() * (48 - 21) + 21 );
-    var g = Math.round( Math.random() * (40 - 4) + 4 );
-    var b = Math.round( Math.random() * (86 - 71) + 71 );
-
-    var color = 'rgb('
-                      + r.toString()
-                      + ', '
-                      + g.toString()
-                      + ', '
-                      + b.toString()
-                      + ')';
-
-    console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
-    return color;
-
-  }
+  // function hueMidnight() {
+  //   var r = Math.round( Math.random() * (48 - 21) + 21 );
+  //   var g = Math.round( Math.random() * (40 - 4) + 4 );
+  //   var b = Math.round( Math.random() * (86 - 71) + 71 );
+  //
+  //   var color = 'rgb('
+  //                     + r.toString()
+  //                     + ', '
+  //                     + g.toString()
+  //                     + ', '
+  //                     + b.toString()
+  //                     + ')';
+  //
+  //   console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+  //   return color;
+  //
+  // }
 
   function decideBounds(hue) {
-    var rMax, rMin, gMax, gMin, bMax, bMin;
+    // new colors arise depending on the mixture of red(r), green(g), blue(b)...
+    // this fxn sets the boundary for the max and min of 'r', 'g', and 'b'
     //this fxn has hard coded color bounds
+    var rMax, rMin, gMax, gMin, bMax, bMin;
+    //baseline: rgb(48, 39, 86)
+    // change name, mightnight isn't a hue
     if (hue === 'Midnight Dream') {
       rMax = 48,
       rMin = 21,
@@ -120,15 +117,10 @@ window.helpers = (function () {
   }
 
   function generateColors(hue) {
+  //fxn decideBounds returns an object, so we use dot notation below: b.rMax
+  //rename function b to something else so it doesn't mix with with 'b' in rgb??
     var b = decideBounds(hue);
-
-    // if (hue === 'Summerset Sunshine') {
-    //   return hueYellow();
-    // }
-    // else if (hue === 'Sunday Pastels') {
-    //   return pastels();
-    // }
-    // (max - min) + min
+                                        // ( max - min) + min
       var r = Math.round( Math.random() * (b.rMax - b.rMin) + b.rMin );
       var g = Math.round( Math.random() * (b.gMax - b.gMin) + b.gMin );
       var b = Math.round( Math.random() * (b.bMax - b.bMin) + b.bMin );
@@ -152,8 +144,8 @@ window.helpers = (function () {
     pastels,
     sayHi,
     hueRed,
-    hueYellow,
-    hueMidnight,
+    // hueYellow,
+    // hueMidnight,
     generateColors,
     decideBounds,
   };
