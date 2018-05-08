@@ -1,4 +1,5 @@
 
+helpers.newColor()
 // Parent Component
 class ColorsDashboard extends React.Component {
   constructor(props) {
@@ -41,24 +42,9 @@ class ColorsDashboard extends React.Component {
         code: helpers.newColor(),
       });
     });
-
     this.setState({
       colors: colors,
     });
-
-
-
-    // const nextColors = this.state.colors.map((color) => {
-    //     return Object.assign({}, color, {
-    //       code: helpers.newColor(),
-    //     });
-    // });
-    // this.setState({
-    //   colors: nextColors,
-    // });
-    // console.log ('created colors:', this.state.colors);
-
-
   }
 
   render() {
@@ -101,13 +87,14 @@ class Color extends React.Component {
       backgroundColor: 'pink',
     }
     return(
-      <div className="colors-wrapper">
-        {this.props.id}
+      <div className="color-wrapper">
         <div
           className="color"
           style={{backgroundColor: this.props.code}}
           onClick={this.handleChange}
         >
+        </div>
+        <div className="color-code">
           {this.props.code}
         </div>
       </div>
@@ -135,7 +122,7 @@ class ColorsController extends React.Component {
     return(
       <div className="button-wrapper">
         <button
-          className="new-colors"
+          className="new-colors-btn"
           onClick={this.handleNewColors}
         >
           New Colors

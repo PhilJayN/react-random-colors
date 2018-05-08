@@ -2,7 +2,7 @@
 
 #content {
   margin-bottom: 4em;
-  border: 1px solid red;
+  text-align: center;
 }
 
 .ui.dividing.header {
@@ -14,14 +14,34 @@ i.icon {
   margin: 0;
 }
 
+.color-wrapper {
+  /* border: 1px solid green; */
+  margin-bottom: 20px;
+  display: inline-block;
+  /* text-align: center; */
+}
+
 .color {
-  width: 100px;
-  height: 100px;
-  border: 1px solid red;
-  /* background-color: pink; */
+  width: 130px;
+  height: 130px;
+  /* border: 1px solid blue; */
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 
 .button-wrapper {
-  border: 1px solid blue; 
+  /* border: 1px solid blue; */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.new-colors-btn {
+  border: none;
+  padding: .55em;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(190, 188, 188);
+  margin-bottom: 40px;
 }
