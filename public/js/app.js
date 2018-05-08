@@ -36,10 +36,12 @@ class ColorsDashboard extends React.Component {
     console.log ('created colors:', this.state.colors);
   }
 
-  rainbowUnicorn() {
+  rainbowUnicorn(hue) {
+    console.log ('rainbowUnicorn running, hue is', hue);
+    // checks for hue color, then puts that hue as an argument into a generic helper generator fxn
     const colors = this.state.colors.map((color) => {
       return Object.assign({}, color, {
-        code: helpers.hueMidnight(),
+        code: helpers.generateColors(hue),
       });
     });
     this.setState({
@@ -126,9 +128,10 @@ class ColorsController extends React.Component {
     this.handleNewColors = this.handleNewColors.bind(this)
   }
 
-  handleNewColors () {
-    console.log('new colors BUTTON clicked!!');
-    this.props.onDelta(this.props.id);
+  // after click registers, calls on function-property given by parent:
+  handleNewColors (e) {
+    console.log('new colors BUTTON clicked!!', e.target.textContent);
+    this.props.onDelta(e.target.textContent);
   }
 
   render() {
@@ -139,6 +142,12 @@ class ColorsController extends React.Component {
           onClick={this.handleNewColors}
         >
           New Pastels
+        </button>
+        <button
+          className="new-colors-btn"
+          onClick={this.handleNewColors}
+        >
+          Summerset Sunshine
         </button>
       </div>
     );

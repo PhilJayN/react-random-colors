@@ -65,6 +65,7 @@ window.helpers = (function () {
                       + ')';
 
     console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+    console.log ('hueYellow just ran!');
     return color;
 
   }
@@ -90,11 +91,38 @@ window.helpers = (function () {
   }
 
 
+  function generateColors(hue) {
+    if (hue === 'Summerset Sunshine') {
+      return hueYellow();
+
+    } else {
+      var r = Math.round( Math.random() * (48 - 21) + 21 );
+      var g = Math.round( Math.random() * (40 - 4) + 4 );
+      var b = Math.round( Math.random() * (86 - 71) + 71 );
+
+      var color = 'rgb('
+      + r.toString()
+      + ', '
+      + g.toString()
+      + ', '
+      + b.toString()
+      + ')';
+
+      console.log ('r', r, 'g', g, 'b', b, 'color var:', color);
+      return color;
+    }
+
+  }
+
+
+
+
   return {
     newColor,
     sayHi,
     hueRed,
     hueYellow,
     hueMidnight,
+    generateColors,
   };
 }());
