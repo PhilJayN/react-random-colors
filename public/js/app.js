@@ -154,6 +154,13 @@ class ColorsController extends React.Component {
         >
           Midnight Dream
         </button>
+        <button
+          className="new-colors-btn"
+          onClick={this.handleNewColors}
+        >
+          Heated Passion
+        </button>
+
       </div>
     );
   }
