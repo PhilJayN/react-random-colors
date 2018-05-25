@@ -15,8 +15,9 @@ class ColorsDashboard extends React.Component {
     this.setState({ colors: Seed.colors })
   }
 
+  // handles changing of one circle color on click (only working for pastels at the moment)
   handleColorChange(colorId) {
-    // console.log ('you clicked on one color!', 'color id:', colorId);
+    console.log ('you clicked on one color!', 'color id:', colorId);
     const nextColors = this.state.colors.map((color) => {
       if (color.id === colorId) {
         console.log ('match color id!!');
@@ -36,12 +37,21 @@ class ColorsDashboard extends React.Component {
 
   rainbowUnicorn(hue) {
     console.log ('rainbowUnicorn running, hue is', hue);
-    // checks for hue color, then puts that hue as an argument into a generic helper generator fxn
-    const colors = this.state.colors.map((color) => {
-      return Object.assign({}, color, {
-        code: helpers.generateColors(hue),
+    var colors;
+    if (hue === 'Sunday Pastels') {
+      colors = this.state.colors.map((color) => {
+        return Object.assign({}, color, {
+          code: helpers.pastels(hue),
+        });
       });
-    });
+    } else {
+      // checks for hue color, then puts that hue as an argument into a generic helper generator fxn
+      colors = this.state.colors.map((color) => {
+        return Object.assign({}, color, {
+          code: helpers.generateColors(hue),
+        });
+      });
+    }
     this.setState({
       colors: colors,
     });
