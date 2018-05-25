@@ -1,13 +1,4 @@
 window.helpers = (function () {
-  function newasdfColor() {
-    const timer = {
-      title: attrs.title || 'Timer',
-      project: attrs.project || 'Project',
-      id: uuid.v4(), // eslint-disable-line no-undef
-      elapsed: 0,
-    };
-    return timer;
-  }
 
   function pastels(){
       var r = (Math.round(Math.random()* 127) + 127);
@@ -25,51 +16,38 @@ window.helpers = (function () {
       return color;
   }
 
-  function decideBounds(hue) {
-    // new colors arise depending on the mixture of red(r), green(g), blue(b)...
-    // this fxn sets the boundary for the max and min of 'r', 'g', and 'b'
-    //this fxn has hard coded color bounds
-    var rMax, rMin, gMax, gMin, bMax, bMin;
-    //baseline: rgb(48, 39, 86)
-    // change name, mightnight isn't a hue
+  function loadColorBounds() {
+  }
+
+  function colorBounds(hue) {
+    //   // new colors arise depending on the mixture of red(r), green(g), blue(b)...
+    //   // this fxn sets the boundary for the max and min of 'r', 'g', and 'b'
+    var bounds;
     if (hue === 'Midnight Dream') {
-      rMax = 48,
-      rMin = 21,
-      gMax = 40,
-      gMin = 4,
-      bMax = 86,
-      bMin = 71;
+      bounds = [[48,21], [40,4], [86,71]];
     }
     else if (hue === 'Summerset Sunshine') {
-      rMax = 248,
-      rMin = 242,
-      gMax = 218,
-      gMin = 209,
-      bMax = 60,
-      bMin = 2;
+      bounds = [[248,242], [218,209], [60,2]];
     }
     else if (hue === 'Heated Passion') {
-      rMax = 255,
-      rMin = 216,
-      gMax = 33,
-      gMin = 1,
-      bMax = 33,
-      bMin = 1;
+      bounds = [[255,216], [33,1], [33,1]];
     }
+
     return {
-      rMax: rMax,
-      rMin: rMin,
-      gMax: gMax,
-      gMin: gMin,
-      bMax: bMax,
-      bMin: bMin,
+      rMax: bounds[0][0],
+      rMin: bounds[0][1],
+      gMax: bounds[1][0],
+      gMin: bounds[1][1],
+      bMax: bounds[2][0],
+      bMin: bounds[2][1],
     }
   }
+
 
   function generateColors(hue) {
   //fxn decideBounds returns an object, so we use dot notation below: b.rMax
   //rename function b to something else so it doesn't mix with with 'b' in rgb??
-    var b = decideBounds(hue);
+    var b = colorBounds(hue);
                                         // ( max - min) + min
       var r = Math.round( Math.random() * (b.rMax - b.rMin) + b.rMin );
       var g = Math.round( Math.random() * (b.gMax - b.gMin) + b.gMin );
@@ -90,6 +68,7 @@ window.helpers = (function () {
   return {
     pastels,
     generateColors,
-    decideBounds,
+    loadColorBounds,
+    colorBounds
   };
 }());

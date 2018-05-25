@@ -1,4 +1,3 @@
-
 // Parent Component
 class ColorsDashboard extends React.Component {
   constructor(props) {
