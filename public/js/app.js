@@ -159,6 +159,18 @@ class ColorsController extends React.Component {
         >
           Heated Passion
         </button>
+        <button
+          className="new-colors-btn"
+          onClick={this.handleNewColors}
+        >
+          Amazonian Green
+        </button>
+        <button
+          className="new-colors-btn"
+          onClick={this.handleNewColors}
+        >
+          Raging Magma
+        </button>
 
       </div>
     );

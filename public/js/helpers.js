@@ -16,14 +16,14 @@ window.helpers = (function () {
       return color;
   }
 
-  function loadColorBounds() {
-  }
-
-  function colorBounds(hue) {
-    //   // new colors arise depending on the mixture of red(r), green(g), blue(b)...
-    //   // this fxn sets the boundary for the max and min of 'r', 'g', and 'b'
+  function loadColorBounds(hue) {
+    // new colors arise depending on the mixture of red(r), green(g), blue(b)...
+    // this fxn sets the boundary for the max and min of 'r', 'g', and 'b'
+    // Fierce, fiesty, Arabian nights, raging inferno, everlasting sunshine, midnight essence,
+    // fervent, zealot, night to reemmber, magma's soul,
     var bounds;
     if (hue === 'Midnight Dream') {
+      // bounds = [[rMax,rMin], [gMax,gMin], [bMax,bMin]];
       bounds = [[48,21], [40,4], [86,71]];
     }
     else if (hue === 'Summerset Sunshine') {
@@ -31,6 +31,12 @@ window.helpers = (function () {
     }
     else if (hue === 'Heated Passion') {
       bounds = [[255,216], [33,1], [33,1]];
+    }
+    else if (hue === 'Amazonian Green') {
+      bounds = [[62,30], [119,109], [61,37]];
+    }
+    else if (hue === 'Raging Magma') {
+      bounds = [[247,242], [90,76], [34,14]];
     }
 
     return {
@@ -43,11 +49,10 @@ window.helpers = (function () {
     }
   }
 
-
   function generateColors(hue) {
   //fxn decideBounds returns an object, so we use dot notation below: b.rMax
   //rename function b to something else so it doesn't mix with with 'b' in rgb??
-    var b = colorBounds(hue);
+    var b = loadColorBounds(hue);
                                         // ( max - min) + min
       var r = Math.round( Math.random() * (b.rMax - b.rMin) + b.rMin );
       var g = Math.round( Math.random() * (b.gMax - b.gMin) + b.gMin );
@@ -68,7 +73,6 @@ window.helpers = (function () {
   return {
     pastels,
     generateColors,
-    loadColorBounds,
-    colorBounds
+    loadColorBounds
   };
 }());
