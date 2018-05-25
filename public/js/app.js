@@ -18,21 +18,21 @@ class ColorsDashboard extends React.Component {
   // handles changing of one circle color on click (only working for pastels at the moment)
   handleColorChange(colorId) {
     console.log ('you clicked on one color!', 'color id:', colorId);
-    const nextColors = this.state.colors.map((color) => {
-      if (color.id === colorId) {
-        console.log ('match color id!!');
-        return Object.assign({}, color, {
-          code: helpers.pastels(),
-        });
-      } else {
-        console.log ('asdjfkl;')
-        return color;
-      }
-    });
-    this.setState({
-      colors: nextColors,
-    });
-    console.log ('created colors:', this.state.colors);
+    // const nextColors = this.state.colors.map((color) => {
+    //   if (color.id === colorId) {
+    //     console.log ('match color id!!');
+    //     return Object.assign({}, color, {
+    //       code: helpers.pastels(),
+    //     });
+    //   } else {
+    //     console.log ('asdjfkl;')
+    //     return color;
+    //   }
+    // });
+    // this.setState({
+    //   colors: nextColors,
+    // });
+    // console.log ('created colors:', this.state.colors);
   }
 
   rainbowUnicorn(hue) {
@@ -119,8 +119,8 @@ class Instructions extends React.Component {
   render() {
     return(
       <div className="instructions">
-        <p>Click on any color to generate one new color.</p>
-        <p>Click on New Colors button for many colors.</p>
+        {/* <p>Click on any color to generate one new color.</p>
+        <p>Click on New Colors button for many colors.</p> */}
       </div>
     );
   }
@@ -180,6 +180,18 @@ class ColorsController extends React.Component {
           onClick={this.handleNewColors}
         >
           Raging Magma
+        </button>
+        <button
+          className="new-colors-btn"
+          onClick={this.handleNewColors}
+        >
+          Everlasting Skies
+        </button>
+        <button
+          className="new-colors-btn"
+          onClick={this.handleNewColors}
+        >
+          Into the Void
         </button>
 
       </div>

@@ -38,6 +38,18 @@ window.helpers = (function () {
     else if (hue === 'Raging Magma') {
       bounds = [[247,242], [90,76], [34,14]];
     }
+    else if (hue === 'Everlasting Skies') {
+      bounds = [[94,58], [159,130], [255,246]];
+    }
+    else if (hue === 'Into the Void') {
+      bounds = [[9,2], [14,9], [25,15]];
+    }
+
+    // else if (hue === 'Neutral Grounds') {
+    //   // bounds = [[178,84], [186,102], [102,96]];
+    //   bounds = [[188,175], [186,179], [185,193]];
+    // }
+
 
     return {
       rMax: bounds[0][0],
