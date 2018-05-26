@@ -1,5 +1,5 @@
 // Parent Component
-class ColorsDashboard extends React.Component {
+class ColorsDashboard extends Component {
   constructor(props) {
     super(props);
 
@@ -80,7 +80,7 @@ class ColorsDashboard extends React.Component {
 
 }
 //child Component
-class Color extends React.Component {
+class Color extends Component {
   constructor(props) {
     super(props);
 
@@ -115,7 +115,7 @@ class Color extends React.Component {
 }
 
 //instructions
-class Instructions extends React.Component {
+class Instructions extends Component {
   render() {
     return(
       <div className="instructions">
@@ -128,7 +128,7 @@ class Instructions extends React.Component {
 
 
 //button component
-class ColorsController extends React.Component {
+class ColorsController extends Component {
 
   constructor(props) {
     super(props);
