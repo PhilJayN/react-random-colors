@@ -120,7 +120,9 @@ class ColorsDashboard extends Component {
 
     return(
       <div className="content-wrapper">
-        {colorComponents}
+        <div className="colors-box">
+          {colorComponents}
+        </div>
         <ColorsController
           onDelta={this.rainbowUnicorn}
         />

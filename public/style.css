@@ -1,10 +1,4 @@
-/* Styles go here */
-
-#content {
-  margin-bottom: 4em;
-  text-align: center;
-}
-
+/*
 .ui.dividing.header {
   margin-top: 1em;
   margin-bottom: 2em;
@@ -12,27 +6,30 @@
 
 i.icon {
   margin: 0;
+} */
+
+/* note the s, plural, wraps all the colors */
+.colors-wrapper {
+  border: 2px solid pink;
+
 }
 
+/* wrapper for ONE color */
 .color-wrapper {
-  /* border: 1px solid green; */
+  border: 1px solid green;
   margin-bottom: 30px;
-  display: inline-block;
-  /* text-align: center; */
 }
 
+/* each individual color itself */
 .color {
   width: 130px;
   height: 130px;
   border-radius: 100%;
-  display: inline-block;
   margin-right: 20px;
 }
 
-
-.button-wrapper {
-  margin-bottom: 0;
-  text-align: center;
+.buttons-wrapper {
+border: 3px solid black;
 }
 
 .new-colors-btn {
@@ -43,4 +40,12 @@ i.icon {
   background-color: rgb(190, 188, 188);
   margin-bottom: 40px;
   margin-right: 20px;
+}
+
+
+/* parent flex */
+.content-wrapper {
+  border: 2px solid green;
+  display: flex;
+  align-items: baseline;
 }

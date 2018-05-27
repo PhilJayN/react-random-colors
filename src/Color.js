@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Color.css';
 
 //child Component
 class Color extends Component {
@@ -19,6 +20,7 @@ class Color extends Component {
     //   backgroundColor: 'pink',
     // }
     return(
+
       <div className="color-wrapper">
         <div
           className="color"

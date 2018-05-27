@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ColorsController.css';
 
 //button component
 class ColorsController extends Component {
@@ -17,7 +18,9 @@ class ColorsController extends Component {
 
   render() {
     return(
-      <div className="button-wrapper">
+      <div className="buttons-box">
+
+      <div className="buttons-wrapper">
         <button
           className="new-colors-btn"
           onClick={this.handleNewColors}
@@ -67,6 +70,9 @@ class ColorsController extends Component {
           Into the Void
         </button>
       </div>
+
+    </div>
+
     );
   }
 }
