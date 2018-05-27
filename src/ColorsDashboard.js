@@ -119,7 +119,7 @@ class ColorsDashboard extends Component {
     ));
 
     return(
-      <div className="content-wrapper">
+      <div className="page-wrapper">
         <div className="colors-box">
           {colorComponents}
         </div>

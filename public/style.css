@@ -8,15 +8,37 @@ i.icon {
   margin: 0;
 } */
 
+
+/* flex parent  */
+.page-wrapper {
+  /* border: 2px solid green; */
+  margin-top: 100px;
+}
+
+/* flex item1  */
+.colors-box {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* flex item2  */
+.buttons-box {
+  /* border: 3px solid black; */
+  display: flex;
+  justify-content: center;
+  flex-grow: 3;
+
+}
+
 /* note the s, plural, wraps all the colors */
 .colors-wrapper {
   border: 2px solid pink;
-
 }
 
 /* wrapper for ONE color */
 .color-wrapper {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   margin-bottom: 30px;
 }
 
@@ -28,9 +50,6 @@ i.icon {
   margin-right: 20px;
 }
 
-.buttons-wrapper {
-border: 3px solid black;
-}
 
 .new-colors-btn {
   border: none;
@@ -40,12 +59,4 @@ border: 3px solid black;
   background-color: rgb(190, 188, 188);
   margin-bottom: 40px;
   margin-right: 20px;
-}
-
-
-/* parent flex */
-.content-wrapper {
-  border: 2px solid green;
-  display: flex;
-  align-items: baseline;
 }
